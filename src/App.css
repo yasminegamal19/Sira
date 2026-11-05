@@ -59,8 +59,6 @@
   display: block;
   width: 52px;
   height: 52px;
-  border-radius: 12px;
-  background: #fff;
   object-fit: contain;
 }
 

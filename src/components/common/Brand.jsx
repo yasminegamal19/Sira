@@ -1,4 +1,4 @@
-import logo from '../../assets/sira-logo.png'
+import logo from '../../assets/sira-logo-cropped.png'
 
 export default function Brand({ footer = false, homeHref = '#top', language = 'ar' }) {
   return (

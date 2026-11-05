@@ -58,9 +58,6 @@
 .signup-header .brand-logo {
   width: 68px;
   height: 68px;
-  border: 1px solid rgba(18, 55, 91, 0.08);
-  border-radius: 15px;
-  box-shadow: 0 4px 13px rgba(11, 34, 60, 0.09);
 }
 
 .signup-header-actions {

@@ -1452,9 +1452,6 @@
 .site .brand-logo {
   width: 82px;
   height: 82px;
-  border: 1px solid rgba(18, 55, 91, 0.08);
-  border-radius: 17px;
-  box-shadow: 0 5px 16px rgba(11, 34, 60, 0.1);
 }
 
 .site .main-nav {

@@ -36,10 +36,6 @@
 .login-header .brand-logo {
   width: 72px;
   height: 72px;
-  border: 1px solid var(--login-border);
-  border-radius: 15px;
-  background: #fff;
-  box-shadow: 0 5px 16px rgba(11, 34, 60, 0.08);
   object-fit: contain;
 }
 
