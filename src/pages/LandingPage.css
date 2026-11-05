@@ -1651,13 +1651,15 @@
 }
 
 .site .pulse-section {
+    background: #EEF4FA;
   width: min(1180px, 100%);
+  box-sizing: border-box;
+  margin-inline: auto;
   display: grid;
   grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
   align-items: center;
   gap: clamp(32px, 6vw, 82px);
 }
-
 .site .pulse-intro {
   max-width: 440px;
 }

@@ -214,6 +214,24 @@
   background-size: 76px 76px;
   mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
 }
+h2 span {
+  display: inline-block;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.pulse-section {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-inline: clamp(17px, 4vw, 48px);
+}
+
+.pulse-intro,
+.pulse-board {
+  width: min(1120px, 100%);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
 
 .hero-content,
 .section-heading,

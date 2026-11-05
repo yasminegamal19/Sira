@@ -69,18 +69,47 @@ export default function BusinessPulseSection({ language }) {
   const activeView = views.find(view => view.id === activeViewId)
 
   return (
-    <section aria-labelledby="pulse-title" className="section pulse-section" id="pulse">
+    <section
+      aria-labelledby="pulse-title"
+      className="section pulse-section"
+      id="pulse"
+      dir={isEnglish ? "ltr" : "rtl"}
+    >
+      {" "}
       <div className="pulse-intro">
-        <span className="eyebrow">{isEnglish ? 'One connected picture' : 'الصورة كاملة، مش أجزاء'}</span>
+        <span className="eyebrow">
+          {isEnglish ? "One connected picture" : "الصورة كاملة، مش أجزاء"}
+        </span>
         <h2 id="pulse-title">
-          {isEnglish ? <>Your business has a pulse.<br /><span>Now you can see it.</span></> : <>كل شغلك له نبض،<br /><span>خليك شايف الصورة.</span></>}
+          {isEnglish ? (
+            <>
+              Your business has a pulse.
+              <br />
+              <span>Now you can see it.</span>
+            </>
+          ) : (
+            <>
+              كل شغلك له نبض،
+              <br />
+              <span>خليك شايف الصورة.</span>
+            </>
+          )}
         </h2>
-        <p>{isEnglish ? 'Move between the parts of your day. Sales, stock, and people all stay connected in one workspace.' : 'تنقّل بين تفاصيل يومك. المبيعات والمخزون وفريقك — كلهم مرتبطين في مساحة واحدة.'}</p>
-        <div aria-label={isEnglish ? 'Explore business views' : 'استكشف جوانب عملك'} className="pulse-tabs">
-          {views.map(view => (
+        <p>
+          {isEnglish
+            ? "Move between the parts of your day. Sales, stock, and people all stay connected in one workspace."
+            : "تنقّل بين تفاصيل يومك. المبيعات والمخزون وفريقك — كلهم مرتبطين في مساحة واحدة."}
+        </p>
+        <div
+          aria-label={
+            isEnglish ? "Explore business views" : "استكشف جوانب عملك"
+          }
+          className="pulse-tabs"
+        >
+          {views.map((view) => (
             <button
               aria-pressed={activeView.id === view.id}
-              className={activeView.id === view.id ? 'active' : ''}
+              className={activeView.id === view.id ? "active" : ""}
               key={view.id}
               onClick={() => setActiveViewId(view.id)}
               type="button"
@@ -93,8 +122,16 @@ export default function BusinessPulseSection({ language }) {
       </div>
       <div aria-live="polite" className="pulse-board">
         <div className="pulse-board-header">
-          <div className="pulse-brand"><span className="pulse-brand-mark">S</span><span>Sira <small>{isEnglish ? 'BUSINESS PULSE' : 'نبض الأعمال'}</small></span></div>
-          <span className="pulse-live"><i />{isEnglish ? 'ALL IN SYNC' : 'كل شيء متصل'}</span>
+          <div className="pulse-brand">
+            <span className="pulse-brand-mark">S</span>
+            <span>
+              Sira <small>{isEnglish ? "BUSINESS PULSE" : "نبض الأعمال"}</small>
+            </span>
+          </div>
+          <span className="pulse-live">
+            <i />
+            {isEnglish ? "ALL IN SYNC" : "كل شيء متصل"}
+          </span>
         </div>
         <div className="pulse-board-body">
           <div className="pulse-chart">
@@ -104,25 +141,55 @@ export default function BusinessPulseSection({ language }) {
             </div>
             <div aria-hidden="true" className="pulse-bars">
               {activeView.bars.map((height, index) => (
-                <i key={`${activeView.id}-${index}`} style={{ height: `${height}%` }} />
+                <i
+                  key={`${activeView.id}-${index}`}
+                  style={{ height: `${height}%` }}
+                />
               ))}
             </div>
-            <div className="pulse-chart-footer"><span>{isEnglish ? 'Your work, as it moves' : 'تفاصيل يومك، وهي بتتحرك'}</span><Icon name="arrowLeft" size={15} /></div>
+            <div className="pulse-chart-footer">
+              <span>
+                {isEnglish
+                  ? "Your work, as it moves"
+                  : "تفاصيل يومك، وهي بتتحرك"}
+              </span>
+              <Icon name="arrowLeft" size={15} />
+            </div>
           </div>
           <div className="pulse-side">
-            <div className="pulse-orbit"><span className="pulse-orbit-center">S</span><i /><i /><i /></div>
-            <span className="pulse-kicker">{isEnglish ? 'YOUR WORKSPACE' : 'مساحة شغلك'}</span>
+            <div className="pulse-orbit">
+              <span className="pulse-orbit-center">S</span>
+              <i />
+              <i />
+              <i />
+            </div>
+            <span className="pulse-kicker">
+              {isEnglish ? "YOUR WORKSPACE" : "مساحة شغلك"}
+            </span>
             <strong>{activeView.value}</strong>
             <span className="pulse-note">{activeView.note}</span>
           </div>
         </div>
         <div className="pulse-board-footer">
-          <span><i />{isEnglish ? 'Sales' : 'المبيعات'}</span>
-          <span><i />{isEnglish ? 'Inventory' : 'المخزون'}</span>
-          <span><i />{isEnglish ? 'Team' : 'الفريق'}</span>
-          <small>{isEnglish ? 'One workspace · Every moving part' : 'مساحة واحدة · كل التفاصيل'}</small>
+          <span>
+            <i />
+            {isEnglish ? "Sales" : "المبيعات"}
+          </span>
+          <span>
+            <i />
+            {isEnglish ? "Inventory" : "المخزون"}
+          </span>
+          <span>
+            <i />
+            {isEnglish ? "Team" : "الفريق"}
+          </span>
+          <small>
+            {isEnglish
+              ? "One workspace · Every moving part"
+              : "مساحة واحدة · كل التفاصيل"}
+          </small>
         </div>
       </div>
     </section>
-  )
+  );
 }
